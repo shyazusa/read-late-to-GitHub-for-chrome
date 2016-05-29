@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Test black",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://google.com/*"],
+      "js": ["jquery-2.2.1.min.js", "myscript.js"]
+    }
+  ]
+}
