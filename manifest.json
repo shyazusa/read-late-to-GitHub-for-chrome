@@ -1,11 +1,33 @@
 {
   "manifest_version": 2,
-  "name": "Test black",
+  "name": "read-late-to-GitHub",
   "version": "1.0",
+  "icon": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "64": "images/icon-64.png"
+  },
+  "browser_action": {
+    "default_title": "read late to GitHub",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "64": "images/icon-64.png"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["https://google.com/*"],
-      "js": ["jquery-2.2.1.min.js", "myscript.js"]
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["jquery-2.2.1.min.js"]
     }
+  ],
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
   ]
 }
