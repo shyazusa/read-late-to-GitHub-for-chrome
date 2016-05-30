@@ -22,7 +22,7 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["jquery-2.2.1.min.js"]
+      "js": ["js/jquery-2.2.1.min.js"]
     }
   ],
   "permissions": [
