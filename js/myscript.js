@@ -21,6 +21,7 @@ $(function() {
         query = JSON.stringify({
           'title': issueTitle,
           'body': body,
+          'assignee': user,
           'labels': ['readlate', 'memo']
         });
         url = "https://api.github.com/repos/" + user + "/" + repo + "/issues?access_token=" + token;
