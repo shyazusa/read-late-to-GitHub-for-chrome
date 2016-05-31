@@ -14,6 +14,15 @@ $(function() {
         user = '';
         repo = '';
         token = '';
+        if (localStorage['user']) {
+          user = localStorage['user'];
+        }
+        if (localStorage['repo']) {
+          repo = localStorage['repo'];
+        }
+        if (localStorage['token']) {
+          token = localStorage['token'];
+        }
         url = tab.url;
         title = tab.title;
         issueTitle = title + " を読む";
@@ -32,7 +41,8 @@ $(function() {
           'data': query,
           'dataType': 'json',
           'success': function(res) {
-            return $('.message').text("Make new issue " + issueTitle + " from " + res.html_url);
+            $('.message').text("Create new issue!");
+            return $('.message').after("<p><a target=\"_blank\" href=\"" + res.html_url + "\">" + issueTitle + "</a></p>");
           }
         });
       });
