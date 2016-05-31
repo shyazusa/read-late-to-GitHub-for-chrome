@@ -6,9 +6,9 @@
 2. Chromeの`デベロッパー モード`をオンにする
 3. `パッケージ化されていない拡張機能を読み込む`からこれを読み込む
 4. 拡張機能のオプションから以下の項目を設定
-  - GitHubのユーザネーム
-  - GitHubのissue作成リポジトリ
-  - GitHubのPersonal access token
+  - GitHubのユーザネーム(私なら`shyazusa`)
+  - GitHubのissue作成リポジトリ(ここを対象にするなら`read-late-to-GitHub-for-chrome`)
+  - GitHubのPersonal access token([Personal Access Tokens](https://github.com/settings/tokens)から作成して下さい)
 6. 好きなページでツールバーの拡張機能をクリック
 7. `New issue`ボタンをクリック!
 8. メッセージが出れば成功です
