@@ -15,6 +15,8 @@
 -  アイコンの背景透明化したい
 -  オプション画面がしょっぱい
 
+## I can't read Japanese!
+
 1. Install this extensions from [here](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)
 1. Please Option setting
   - GitHub user.name (E.g. `shyazusa`)
@@ -23,3 +25,5 @@
 1. Let's browsing!
 1. if you want "add issue this page.", Click this extensions
 1. and click `New issue` button
+
+これ合ってる?
