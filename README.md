@@ -1,8 +1,5 @@
 # read late to GitHub for Chrome
 
-~~まだjsの中に自分のアカウントを設定する必要がありますが、一旦動作は出来るようになりました。~~  
-この子だけで完結するようになりました！
-
 1. [ここ](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)から拡張機能を入れる
 1. 拡張機能のオプションをクリックして、それぞれ以下の項目を設定
   - GitHubのユーザネーム(私なら`shyazusa`)
@@ -17,3 +14,12 @@
 
 -  アイコンの背景透明化したい
 -  オプション画面がしょっぱい
+
+1. [Install Add-ons](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)
+1. Please Option setting
+  - GitHub user.name (E.g. `shyazusa`)
+  - GitHub new issue target repositori (E.g. `read-late-to-GitHub-for-chrome`)
+  - GitHub Personal access token (Make [Personal Access Tokens](https://github.com/settings/tokens))
+1. Let's browsing!
+1. if you want "add issue this page.", Click this extensions
+1. and click `New issue` button
