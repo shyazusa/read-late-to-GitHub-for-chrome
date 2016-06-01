@@ -15,7 +15,7 @@
 -  アイコンの背景透明化したい
 -  オプション画面がしょっぱい
 
-1. [Install Add-ons](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)
+1. Install this extensions from [here](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)
 1. Please Option setting
   - GitHub user.name (E.g. `shyazusa`)
   - GitHub new issue target repositori (E.g. `read-late-to-GitHub-for-chrome`)
