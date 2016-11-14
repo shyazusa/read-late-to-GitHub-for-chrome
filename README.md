@@ -18,12 +18,14 @@
 ## I can't read Japanese!
 
 1. Install this extensions from [here](https://chrome.google.com/webstore/detail/read-late-to-github/ikenklicgfopbopbndapggfmhkjmifoi)
-1. Please Option setting
+1. Configure Options before using
   - GitHub user.name (E.g. `shyazusa`)
-  - GitHub new issue target repositori (E.g. `read-late-to-GitHub-for-chrome`)
+  - GitHub repository to add new issues to (E.g. `read-late-to-GitHub-for-chrome`)
   - GitHub Personal access token (Make [Personal Access Tokens](https://github.com/settings/tokens))
-1. Let's browsing!
-1. if you want "add issue this page.", Click this extensions
-1. and click `New issue` button
+1. Let's start browsing!
+1. If you want to create an issue containing the current tab's title and link, Click this extension icon on the toolbar
+1. Click `New issue` button
+  - If it is successful it will display a link to the newly created issue
+  - Note: clicking on `New issue` more than once will add multiple new issues
 
 これ合ってる?
