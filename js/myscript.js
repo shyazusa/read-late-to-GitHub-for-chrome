@@ -25,7 +25,7 @@ $(function() {
         }
         url = tab.url;
         title = tab.title;
-        issueTitle = title + " を読む";
+        issueTitle = "Read later " + title;
         body = "[" + title + "](" + url + ")";
         query = JSON.stringify({
           'title': issueTitle,
