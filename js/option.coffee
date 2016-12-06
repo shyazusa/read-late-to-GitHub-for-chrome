@@ -11,8 +11,13 @@ $ ->
     $('#token').val(localStorage['token'])
   else
     $('#token').val('Enter the GitHub Personal access token')
+  if localStorage['labels']
+    $('#labels').val(localStorage['labels'])
+  else
+    $('#labels').val('readlate, memo')
 
   $('#save').on 'click', ->
     localStorage['user'] = $('#user').val()
     localStorage['repo'] = $('#repo').val()
     localStorage['token'] = $('#token').val()
+    localStorage['labels'] = $('#labels').val()

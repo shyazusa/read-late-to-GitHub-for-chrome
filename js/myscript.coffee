@@ -14,15 +14,18 @@ $ ->
           repo = localStorage['repo']
         if localStorage['token']
           token = localStorage['token']
+        if localStorage['labels']
+          labelStr = localStorage['labels']
         url = tab.url
         title = tab.title
         issueTitle = "Read later #{title}"
         body = "[#{title}](#{url})"
+        labels = "#{labelStr}".split ','
         query = JSON.stringify({
           'title': issueTitle
           'body': body
           'assignee': user
-          'labels': ['readlate', 'memo']
+          'labels': labels
         })
         url = "https://api.github.com/repos/#{user}/#{repo}/issues?access_token=#{token}"
         $.ajax
