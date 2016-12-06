@@ -1,0 +1,11 @@
+div.main-setting {
+  text-align: center;
+}
+input {
+  width: 500px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+input#save {
+  width: 250px;
+}

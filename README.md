@@ -12,8 +12,9 @@
 
 ## まだ出来ていないこと
 
--  アイコンの背景透明化したい
--  オプション画面がしょっぱい
+- [ ] アイコンの背景透明化したい
+- [x] オプション画面がしょっぱい
+  - なんとか……少しだけ良くした……
 
 ## I can't read Japanese!
 
@@ -27,5 +28,3 @@
 1. Click `New issue` button
   - If it is successful it will display a link to the newly created issue
   - Note: clicking on `New issue` more than once will add multiple new issues
-
-これ合ってる?
