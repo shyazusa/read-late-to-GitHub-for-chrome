@@ -14,9 +14,15 @@ $(function() {
   } else {
     $('#token').val('Enter the GitHub Personal access token');
   }
+  if (localStorage['labels']) {
+    $('#labels').val(localStorage['labels']);
+  } else {
+    $('#labels').val('readlate, memo');
+  }
   return $('#save').on('click', function() {
     localStorage['user'] = $('#user').val();
     localStorage['repo'] = $('#repo').val();
-    return localStorage['token'] = $('#token').val();
+    localStorage['token'] = $('#token').val();
+    return localStorage['labels'] = $('#labels').val();
   });
 });

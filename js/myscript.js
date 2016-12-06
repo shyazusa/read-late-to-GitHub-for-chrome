@@ -10,7 +10,7 @@ $(function() {
   return $(document).on('click', '#issue-button', function() {
     return ws.getCurrent(function(window) {
       return tbs.getSelected(window.id, function(tab) {
-        var body, issueTitle, query, repo, title, token, url, user;
+        var body, issueTitle, labelStr, labels, query, repo, title, token, url, user;
         user = '';
         repo = '';
         token = '';
@@ -23,15 +23,19 @@ $(function() {
         if (localStorage['token']) {
           token = localStorage['token'];
         }
+        if (localStorage['labels']) {
+          labelStr = localStorage['labels'];
+        }
         url = tab.url;
         title = tab.title;
         issueTitle = "Read later " + title;
         body = "[" + title + "](" + url + ")";
+        labels = ("" + labelStr).split(',');
         query = JSON.stringify({
           'title': issueTitle,
           'body': body,
           'assignee': user,
-          'labels': ['readlate', 'memo']
+          'labels': labels
         });
         url = "https://api.github.com/repos/" + user + "/" + repo + "/issues?access_token=" + token;
         return $.ajax({
