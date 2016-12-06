@@ -20,13 +20,20 @@ $ ->
         title = tab.title
         issueTitle = "Read later #{title}"
         body = "[#{title}](#{url})"
-        labels = "#{labelStr}".split ','
-        query = JSON.stringify({
-          'title': issueTitle
-          'body': body
-          'assignee': user
-          'labels': labels
-        })
+        if labelStr
+          labels = "#{labelStr}".split ','
+          query = JSON.stringify({
+            'title': issueTitle
+            'body': body
+            'assignee': user
+            'labels': labels
+          })
+        else
+          query = JSON.stringify({
+            'title': issueTitle
+            'body': body
+            'assignee': user
+          })
         url = "https://api.github.com/repos/#{user}/#{repo}/issues?access_token=#{token}"
         $.ajax
           'async': false
