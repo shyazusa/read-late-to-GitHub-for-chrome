@@ -23,9 +23,10 @@ $ ->
     localStorage['repo'] = $('#repo').val()
     localStorage['token'] = $('#token').val()
     localStorage['labels'] = $('#labels').val()
+    # TODO: マイルストーンの保存を行う
+    # TODO: バリューがnullだったら保存しない
     # Show Milestones
     setMilestone()
-    $('.milestone').show()
 
   # Set Milestones
   setMilestone = ->
@@ -36,8 +37,6 @@ $ ->
       user = null
     if repo == null || repo == 'Enter the GitHub repositori name'
       repo = null
-    console.log user
-    console.log repo
     if user && repo
       query = JSON.stringify({
         'state': 'all'
@@ -52,6 +51,11 @@ $ ->
         'data': query
         'dataType': 'json'
         'success': (res) ->
-          # $('.message').text "Create new issue!"
-          # $('.message').after "<p><a target=\"_blank\" href=\"#{res.html_url}\">#{issueTitle}</a></p>"
-          console.log 'Catch milestones'
+          $('#milestone option').remove()
+          $('#milestone').append $('<option>', { value: null, text: 'Choose Milestone'})
+          for key, value of res
+            $('#milestone').append $('<option>', { value: value['number'], text: value['title']})
+          $('.milestone').show()
+        'error': (res) ->
+          # TODO: ここは直接メッセージが出るようにしよう
+          console.log url
