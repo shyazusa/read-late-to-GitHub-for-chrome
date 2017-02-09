@@ -1,38 +1,11 @@
 $(function() {
   var setMilestone;
-  if (localStorage['user']) {
-    $('#user').val(localStorage['user']);
-  } else {
-    $('#user').val('Enter the GitHub user name');
-  }
-  if (localStorage['repo']) {
-    $('#repo').val(localStorage['repo']);
-  } else {
-    $('#repo').val('Enter the GitHub repositori name');
-  }
-  if (localStorage['token']) {
-    $('#token').val(localStorage['token']);
-  } else {
-    $('#token').val('Enter the GitHub Personal access token');
-  }
-  if (localStorage['labels']) {
-    $('#labels').val(localStorage['labels']);
-  } else {
-    $('#labels').val('readlate, memo');
-  }
-  $('.milestone').hide();
-  $('#save').on('click', function() {
-    localStorage['user'] = $('#user').val();
-    localStorage['repo'] = $('#repo').val();
-    localStorage['token'] = $('#token').val();
-    localStorage['labels'] = $('#labels').val();
-    return setMilestone();
-  });
-  return setMilestone = function() {
-    var query, repo, token, url, user;
+  setMilestone = function() {
+    var milestone, query, repo, token, url, user;
     user = localStorage['user'];
     repo = localStorage['repo'];
     token = localStorage['token'];
+    milestone = localStorage['milestone'];
     if (user === null || user === 'Enter the GitHub user name') {
       user = null;
     }
@@ -56,7 +29,7 @@ $(function() {
           var key, value;
           $('#milestone option').remove();
           $('#milestone').append($('<option>', {
-            value: null,
+            value: 0,
             text: 'Choose Milestone'
           }));
           for (key in res) {
@@ -66,6 +39,7 @@ $(function() {
               text: value['title']
             }));
           }
+          $('#milestone').val(milestone);
           return $('.milestone').show();
         },
         'error': function(res) {
@@ -74,4 +48,39 @@ $(function() {
       });
     }
   };
+  if (localStorage['user']) {
+    $('#user').val(localStorage['user']);
+  } else {
+    $('#user').val('Enter the GitHub user name');
+  }
+  if (localStorage['repo']) {
+    $('#repo').val(localStorage['repo']);
+  } else {
+    $('#repo').val('Enter the GitHub repositori name');
+  }
+  if (localStorage['token']) {
+    $('#token').val(localStorage['token']);
+  } else {
+    $('#token').val('Enter the GitHub Personal access token');
+  }
+  if (localStorage['labels']) {
+    $('#labels').val(localStorage['labels']);
+  } else if (localStorage['labels'] === '') {
+    $('#labels').val('');
+  } else {
+    $('#labels').val('readlate, memo');
+  }
+  if (localStorage['milestone'] === '0') {
+    $('.milestone').hide();
+  } else {
+    setMilestone();
+  }
+  return $('#save').on('click', function() {
+    localStorage['user'] = $('#user').val();
+    localStorage['repo'] = $('#repo').val();
+    localStorage['token'] = $('#token').val();
+    localStorage['labels'] = $('#labels').val();
+    localStorage['milestone'] = $('#milestone').val();
+    return setMilestone();
+  });
 });

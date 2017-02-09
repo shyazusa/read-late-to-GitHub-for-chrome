@@ -51,7 +51,7 @@ $ ->
     $('#labels').val('')
   else
     $('#labels').val('readlate, memo')
-  if localStorage['milestone'] is 0
+  if localStorage['milestone'] is '0'
     $('.milestone').hide()
   else
     setMilestone()
