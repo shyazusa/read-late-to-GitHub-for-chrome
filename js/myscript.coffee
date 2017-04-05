@@ -14,26 +14,26 @@ $ ->
           repo = localStorage['repo']
         if localStorage['token']
           token = localStorage['token']
-        if localStorage['labels']
+        if localStorage['labels'] isnt ''
           labelStr = localStorage['labels']
+        if localStorage['milestone']
+          milestone = localStorage['milestone']
         url = tab.url
         title = tab.title
         issueTitle = "Read later #{title}"
         body = "[#{title}](#{url})"
+        query = {
+          'title': issueTitle
+          'body': body
+          'assignee': user
+        }
         if labelStr
           labels = "#{labelStr}".split ','
-          query = JSON.stringify({
-            'title': issueTitle
-            'body': body
-            'assignee': user
-            'labels': labels
-          })
-        else
-          query = JSON.stringify({
-            'title': issueTitle
-            'body': body
-            'assignee': user
-          })
+          query.labels = labels
+        $('.message').text typeof(milestone) + ' : ' + milestone
+        if milestone isnt '0'
+          query.milestone = milestone
+        query = JSON.stringify query
         url = "https://api.github.com/repos/#{user}/#{repo}/issues?access_token=#{token}"
         $.ajax
           'async': false

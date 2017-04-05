@@ -9,3 +9,6 @@ input {
 input#save {
   width: 250px;
 }
+select {
+  width: 500px;
+}
